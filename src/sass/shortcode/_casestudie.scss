@@ -1,0 +1,111 @@
+/*--------------------------------------------------------------
+  18. Casestudie
+----------------------------------------------------------------*/
+.cs_timeline_wrapper {
+  overflow-x: auto;
+}
+
+.cs_days_row {
+  min-width: 1070px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border: 1px solid var(--border-color);
+
+  .cs_day_col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 10px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+
+    &:not(:last-child) {
+      border-right: 1px solid var(--border-color);
+    }
+
+    &:hover {
+      background-color: var(--blue-color);
+      color: var(--white);
+    }
+  }
+}
+
+.cs_content_row {
+  min-width: 1070px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border: 1px solid var(--border-color);
+  border-top: 0;
+
+  .cs_content_col {
+    padding: 30px 10px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+
+    &:not(:last-child) {
+      border-right: 1px solid var(--border-color);
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-image: url("/assets/img/schedule_bg_1.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    &.cs_time::after {
+      display: none;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+
+      .cs_schedule_title,
+      .cs_schedule_time,
+      .cs_doctor_title {
+        color: var(--white);
+      }
+    }
+  }
+
+  .cs_time {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading-color);
+  }
+
+  .cs_schedule_wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    .cs_schedule_title {
+      font-size: 20px;
+      margin-bottom: 2px;
+    }
+
+    .cs_schedule_time {
+      font-size: 14px;
+      color: var(--accent-color);
+      margin-bottom: 0px;
+    }
+
+    .cs_doctor_title {
+      margin-bottom: 0;
+    }
+  }
+}

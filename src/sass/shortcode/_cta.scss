@@ -1,0 +1,342 @@
+/*--------------------------------------------------------------
+  14. CTA
+----------------------------------------------------------------*/
+.cs_cta.cs_style_1 {
+  @media (max-width: 991px) {
+    padding: 70px 0;
+  }
+
+  .cs_cta_in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      gap: 25px 0;
+    }
+  }
+
+  .cs_cta_left {
+    display: flex;
+    align-items: center;
+    gap: 30px 70px;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .cs_cta_right {
+    flex: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cs_cta_title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .cs_cta_subtitle {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .cs_cta_thumb {
+    flex: none;
+    width: 200px;
+    height: 190px;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 110px;
+      width: 110px;
+      background-color: var(--accent-color);
+      position: absolute;
+      transform: rotate(45deg);
+      right: -20px;
+      top: 50%;
+      margin-top: -55px;
+
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .cs_cta_shape {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    right: -140px;
+    bottom: -150px;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &::before {
+      transform: scale(0);
+      z-index: 1;
+      animation: zoom-shape1 4s linear infinite;
+      animation-delay: 1s;
+    }
+
+    &::after {
+      transform: scale(0);
+      animation: zoom-shape2 4s linear infinite;
+      opacity: 0.71;
+    }
+  }
+
+  &.cs_type_1 {
+    @media (max-width: 991px) {
+      padding: 0;
+    }
+    .cs_cta_in {
+      padding: 33px 0;
+      position: relative;
+      z-index: 1;
+      @media (max-width: 991px) {
+        padding: 70px 0;
+      }
+    }
+
+    .cs_cta_left {
+      gap: 30px 60px;
+    }
+
+    .cs_cta_thumb {
+      width: initial;
+      height: 125px;
+
+      &:before {
+        height: 60px;
+        width: 60px;
+        margin-top: -32px;
+        right: -12px;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        left: -20px;
+        top: 0;
+        background-color: var(--blue-color);
+        border-radius: 100px 0 0 100px;
+        @media (max-width: 991px) {
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 0;
+        }
+      }
+    }
+
+    .cs_cta_shape {
+      z-index: 3;
+    }
+  }
+}
+
+.cs_cta.cs_style_2 {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  position: relative;
+
+  @media (max-width: 500px) {
+    min-height: 640px;
+  }
+
+  @media (max-width: 380px) {
+    min-height: 680px;
+  }
+
+  .cs_cta_btn_wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 991px) {
+      justify-content: start;
+    }
+  }
+
+  .cs_player_btn {
+    width: 43px;
+    height: 43px;
+    color: var(--accent-color);
+
+    &:before,
+    &:after {
+      background-color: var(--white);
+    }
+  }
+
+  .cs_play_btn_text {
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, currentColor),
+      to(currentColor)
+    );
+    background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+    transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+      color 0.27s ease-out;
+    background-position: 100% calc(100% - 0px);
+    background-size: 0 1px;
+
+    &:hover {
+      background-size: 100% 1px;
+      background-position: 0 calc(100% - 0px);
+    }
+  }
+
+  .cs_video_open {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 500;
+
+    &:hover {
+      .cs_play_btn_text {
+        background-size: 100% 1px;
+        background-position: 0 calc(100% - 0px);
+      }
+    }
+  }
+
+  .cs_cta_text {
+    max-width: 540px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cs_section_title {
+    margin-bottom: 12px;
+  }
+
+  .cs_cta_subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 44px;
+  }
+
+  .cs_btn.cs_style_1 {
+    margin-top: 1px;
+  }
+
+  .cs_cta_shape {
+    right: 3%;
+    bottom: 8%;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.cs_cta.cs_style_3 {
+  padding: 60px 0 65px;
+
+  @media (max-width: 767px) {
+    padding: 40px 0;
+  }
+
+  .cs_cta_in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: start;
+      gap: 24px;
+    }
+  }
+
+  .cs_cta_info {
+    padding-left: 20px;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      width: 3px;
+      height: 100%;
+      border-radius: 2px;
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      background-color: var(--white);
+      top: 0;
+    }
+
+    &::after {
+      height: 50%;
+      background-color: var(--blue-color);
+      bottom: 0;
+    }
+  }
+
+  .cs_cta_title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .cs_color_3:hover {
+    background-color: var(--blue-color);
+  }
+}
+
+@keyframes zoom-shape1 {
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes zoom-shape2 {
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

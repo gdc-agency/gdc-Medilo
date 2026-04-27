@@ -1,0 +1,290 @@
+/*--------------------------------------------------------------
+  19. Team
+----------------------------------------------------------------*/
+.cs_team.cs_style_1 {
+  width: 100%;
+  max-width: 320px;
+  height: 415px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+
+  @media (max-width: 1400px) {
+    height: 360px;
+  }
+
+  @media (max-width: 1199px) {
+    height: 400px;
+  }
+
+  @media (max-width: 991px) {
+    height: 415px;
+  }
+
+  .cs_team_thumbnail {
+    position: relative;
+    z-index: 1;
+    transition: all 0.6s ease;
+  }
+
+  .cs_team_bio {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .cs_team_title a {
+    font-size: 20px;
+    color: var(--white);
+  }
+
+  .cs_team_subtitle {
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+
+  .cs_social_btns.cs_style_1 a {
+    background-color: var(--white);
+    color: var(--blue-color);
+
+    &:hover {
+      background-color: var(--accent-color);
+      color: var(--white);
+
+      &.cs_blue_hover {
+        background-color: var(--blue-color);
+      }
+    }
+  }
+
+  .cs_team_shape {
+    width: 330px;
+    height: 270px;
+    position: absolute;
+    top: -250px;
+    right: -240px;
+    transform: rotate(-30deg);
+    transition: all 0.6s ease;
+
+    &.cs_blue_bg {
+      width: 160px;
+      height: 330px;
+      top: -125px;
+      left: -100px;
+      transform: rotate(-48deg);
+    }
+  }
+
+  &:hover {
+    .cs_team_thumbnail {
+      width: 178px;
+      height: 178px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .cs_team_bio {
+      position: initial;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs_team_shape {
+      top: -170px;
+      right: -110px;
+
+      &.cs_blue_bg {
+        top: -135px;
+        left: -50px;
+      }
+    }
+  }
+}
+
+.cs_team_bg_dark {
+  width: 100%;
+  height: 45%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+
+  .cs_team_bg_white {
+    width: 100%;
+    max-width: 1400px;
+    height: 170px;
+    position: absolute;
+    top: -85px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.cs_doctors_grid.cs_style_1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/*-------------------------------------------
+ Doctor Details Page Styling
+----------------------------------------------*/
+.cs_doctor_details_wrapper {
+  width: 100%;
+
+  .cs_progress_bar_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 70px;
+    .cs_progress_head,
+    .cs_progress {
+      max-width: 100%;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.cs_doctor_details_thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cs_doctor_thumbnail_shape1,
+  .cs_doctor_thumbnail_shape2 {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    transform: scale(0.7);
+    opacity: 0.5;
+    animation: scale-shape 5s linear infinite;
+  }
+
+  .cs_doctor_thumbnail_shape1 {
+    left: -70px;
+    top: -100px;
+    z-index: 1;
+  }
+
+  .cs_doctor_thumbnail_shape2 {
+    left: -100px;
+    top: -40px;
+    animation-delay: 2s;
+  }
+}
+
+.cs_doctor_details {
+  width: 100%;
+  padding-left: 60px;
+
+  @media (max-width: 1199px) {
+    padding-left: 0;
+  }
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+
+  .cs_doctor_info_header {
+    margin-bottom: 17px;
+  }
+
+  .cs_doctor_title {
+    font-size: 22px;
+    margin-bottom: 3px;
+  }
+
+  .cs_doctor_info_wrapper {
+    width: 100%;
+    border: 1px solid var(--border-color);
+
+    @media (max-width: 991px) {
+      max-width: 100%;
+    }
+  }
+
+  .cs_doctor_info_row {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--border-color);
+
+    @media (max-width: 575px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 100%;
+      background-color: var(--border-color);
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+
+      @media (max-width: 575px) {
+        display: none;
+      }
+    }
+  }
+
+  .cs_doctor_info_col {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 575px) {
+      &:first-child {
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+  }
+}
+
+@keyframes scale-shape {
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
